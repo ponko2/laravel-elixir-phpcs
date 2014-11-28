@@ -1,3 +1,5 @@
+'use strict';
+
 var gulp        = require('gulp'),
     elixir      = require('laravel-elixir'),
     notify      = require('gulp-notify'),
@@ -19,9 +21,9 @@ var logReporter = function () {
         return;
       }
 
-      var message = colors.underline(file.path) + '\n  '
-        + colors.red(report.error) + '\n    '
-        + report.output.replace(/\n/g, '\n    ');
+      var message = colors.underline(file.path) + '\n  ' +
+        colors.red(report.error) + '\n    ' +
+        report.output.replace(/\n/g, '\n    ');
 
       console.log(message);
     });
@@ -50,22 +52,22 @@ var failReporter = function () {
   });
 };
 
-elixir.extend("phpcs", function (src, options) {
+elixir.extend('phpcs', function (src, options) {
   src     = src     || 'app/**/*.php';
   options = options || {};
 
   var onError = function (err) {
     notify.onError({
-      title: "Laravel Elixir",
-      subtitle: "PHP_CodeSniffer failed.",
-      message: "<%= error.message %>",
+      title: 'Laravel Elixir',
+      subtitle: 'PHP_CodeSniffer failed.',
+      message: '<%= error.message %>',
       icon: __dirname + '/../laravel-elixir/icons/fail.png'
     })(err);
 
     this.emit('end');
   };
 
-  gulp.task("phpcs", function () {
+  gulp.task('phpcs', function () {
     return gulp.src(src)
       .pipe(phpcs(options))
       .pipe(gutil.buffer())
@@ -80,7 +82,7 @@ elixir.extend("phpcs", function (src, options) {
       }));
   });
 
-  this.registerWatcher("phpcs", src);
+  this.registerWatcher('phpcs', src);
 
-  return this.queueTask("phpcs");
+  return this.queueTask('phpcs');
 });
