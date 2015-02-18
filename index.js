@@ -1,16 +1,16 @@
 'use strict';
 
-var gulp        = require('gulp'),
-    elixir      = require('laravel-elixir'),
-    notify      = require('gulp-notify'),
-    phpcs       = require('gulp-phpcs'),
-    gutil       = require('gulp-util'),
-    map         = require('map-stream'),
-    events      = require('events'),
-    _           = require('underscore'),
-    colors      = gutil.colors,
-    emitter     = new events.EventEmitter(),
-    PluginError = gutil.PluginError;
+var gulp        = require('gulp');
+var elixir      = require('laravel-elixir');
+var notify      = require('gulp-notify');
+var phpcs       = require('gulp-phpcs');
+var gutil       = require('gulp-util');
+var map         = require('map-stream');
+var events      = require('events');
+var _           = require('underscore');
+var colors      = gutil.colors;
+var emitter     = new events.EventEmitter();
+var PluginError = gutil.PluginError;
 
 var logReporter = function () {
   return map(function (files, cb) {
