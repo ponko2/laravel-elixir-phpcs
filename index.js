@@ -8,6 +8,7 @@ var gutil       = require('gulp-util');
 var map         = require('map-stream');
 var events      = require('events');
 var _           = require('underscore');
+var path        = require('path');
 var colors      = gutil.colors;
 var emitter     = new events.EventEmitter();
 var PluginError = gutil.PluginError;
@@ -53,7 +54,8 @@ var failReporter = function () {
 };
 
 elixir.extend('phpcs', function (src, options) {
-  src     = src     || 'app/**/*.php';
+  src = src || 'app/**/*.php';
+
   options = options || {};
 
   var onError = function (err) {
@@ -61,7 +63,7 @@ elixir.extend('phpcs', function (src, options) {
       title: 'Laravel Elixir',
       subtitle: 'PHP_CodeSniffer failed.',
       message: '<%= error.message %>',
-      icon: __dirname + '/../laravel-elixir/icons/fail.png'
+      icon: path.join(__dirname, '../laravel-elixir/icons/fail.png')
     })(err);
 
     this.emit('end');
@@ -78,7 +80,7 @@ elixir.extend('phpcs', function (src, options) {
         title: 'Laravel Elixir',
         subtitle: 'PHP_CodeSniffer passed.',
         message: ' ',
-        icon: __dirname + '/../laravel-elixir/icons/pass.png'
+        icon: path.join(__dirname, '../laravel-elixir/icons/pass.png')
       }));
   });
 
