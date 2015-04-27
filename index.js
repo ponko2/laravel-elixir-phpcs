@@ -13,9 +13,9 @@ var colors      = gutil.colors;
 var emitter     = new events.EventEmitter();
 var PluginError = gutil.PluginError;
 
-var logReporter = function () {
-  return map(function (files, cb) {
-    _.each(files, function (file) {
+var logReporter = function() {
+  return map(function(files, cb) {
+    _.each(files, function(file) {
       var report = file.phpcsReport || {};
 
       if (!report.error) {
@@ -33,14 +33,14 @@ var logReporter = function () {
   });
 };
 
-var failReporter = function () {
-  return map(function (files, cb) {
-    var errors = _.filter(files, function (file) {
+var failReporter = function() {
+  return map(function(files, cb) {
+    var errors = _.filter(files, function(file) {
       return file.phpcsReport.error;
     });
 
     if (errors.length > 0) {
-      var fails = _.map(errors, function (file) {
+      var fails = _.map(errors, function(file) {
         return file.path;
       });
 
@@ -53,12 +53,12 @@ var failReporter = function () {
   });
 };
 
-elixir.extend('phpcs', function (src, options) {
+elixir.extend('phpcs', function(src, options) {
   src = src || 'app/**/*.php';
 
   options = options || {};
 
-  var onError = function (err) {
+  var onError = function(err) {
     notify.onError({
       title: 'Laravel Elixir',
       subtitle: 'PHP_CodeSniffer failed.',
@@ -69,7 +69,7 @@ elixir.extend('phpcs', function (src, options) {
     this.emit('end');
   };
 
-  gulp.task('phpcs', function () {
+  gulp.task('phpcs', function() {
     return gulp.src(src)
       .pipe(phpcs(options))
       .pipe(gutil.buffer())
