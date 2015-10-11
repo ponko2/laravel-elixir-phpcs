@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-phpcs",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "Laravel Elixir PHP_CodeSniffer Extension",
   "main": "index.js",
   "scripts": {
@@ -23,11 +23,11 @@
   },
   "homepage": "https://github.com/ponko2/laravel-elixir-phpcs",
   "dependencies": {
-    "events": "^1.0.2",
-    "gulp-notify": "^2.0.0",
-    "gulp-phpcs": "^0.2.1",
-    "gulp-util": "^3.0.1",
-    "map-stream": "0.0.5",
-    "underscore": "^1.7.0"
+    "events": "^1.1.0",
+    "gulp-phpcs": "^0.7.0",
+    "gulp-util": "^3.0.6",
+    "laravel-elixir": "^3.0.0",
+    "map-stream": "0.0.6",
+    "underscore": "^1.8.3"
   }
 }
