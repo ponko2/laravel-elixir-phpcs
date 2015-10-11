@@ -70,7 +70,6 @@ Elixir.extend('phpcs', function (src, options) {
       .pipe(gutil.buffer())
       .pipe(logReporter())
       .pipe(failReporter())
-      .on('error', onError)
-      .pipe(notify.message('PHP_CodeSniffer Passed'));
+      .on('error', onError);
   }).watch(paths.src.path);
 });
