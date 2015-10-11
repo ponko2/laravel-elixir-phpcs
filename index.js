@@ -57,13 +57,13 @@ Elixir.extend('phpcs', function (src, options) {
   var paths = new Elixir.GulpPaths()
     .src(src || [config.appPath + '/**/*.php']);
 
+  var onError = function (err) {
+    notify.error(err, 'PHP_CodeSniffer failed');
+    this.emit('end');
+  };
+
   new Elixir.Task('phpcs', function () {
     this.log(paths.src);
-
-    var onError = function (err) {
-      notify.error(err, 'PHP_CodeSniffer failed');
-      this.emit('end');
-    };
 
     return gulp.src(paths.src.path)
       .pipe(phpcs(options || {}))
