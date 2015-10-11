@@ -44,7 +44,7 @@ var failReporter = function () {
         return file.path;
       });
 
-      var message = 'PHP_CodeSniffer failed for: ' + fails.join(', ');
+      var message = fails.join(', ');
 
       emitter.emit('error', new PluginError('phpcs', message));
     }
@@ -58,7 +58,7 @@ Elixir.extend('phpcs', function (src, options) {
     .src(src || [config.appPath + '/**/*.php']);
 
   var onError = function (err) {
-    notify.error(err, 'PHP_CodeSniffer failed');
+    notify.error(err, 'PHP_CodeSniffer Failed');
     this.emit('end');
   };
 
@@ -71,6 +71,6 @@ Elixir.extend('phpcs', function (src, options) {
       .pipe(logReporter())
       .pipe(failReporter())
       .on('error', onError)
-      .pipe(notify.message('PHP_CodeSniffer passed'));
+      .pipe(notify.message('PHP_CodeSniffer Passed'));
   }).watch(paths.src.path);
 });

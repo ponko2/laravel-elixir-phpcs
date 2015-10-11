@@ -1,6 +1,6 @@
 {
   "name": "laravel-elixir-phpcs",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Laravel Elixir PHP_CodeSniffer Extension",
   "main": "index.js",
   "scripts": {
