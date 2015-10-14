@@ -10,7 +10,7 @@ var _           = require('underscore');
 var colors      = gutil.colors;
 var emitter     = new events.EventEmitter();
 var PluginError = gutil.PluginError;
-var notify      = new Elixir.Notification;
+var notify      = new Elixir.Notification();
 var config      = Elixir.config;
 
 var logReporter = function () {
