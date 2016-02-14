@@ -16,13 +16,14 @@ var config      = Elixir.config;
 var logReporter = function () {
   return map(function (files, cb) {
     _.each(files, function (file) {
-      var report = file.phpcsReport || {};
+      var report  = file.phpcsReport || {};
+      var message = '';
 
       if (!report.error) {
         return;
       }
 
-      var message = colors.underline(file.path) + '\n  ' +
+      message = colors.underline(file.path) + '\n  ' +
         colors.red(report.error) + '\n    ' +
         report.output.replace(/\n/g, '\n    ');
 
@@ -35,16 +36,19 @@ var logReporter = function () {
 
 var failReporter = function () {
   return map(function (files, cb) {
+    var fails   = [];
+    var message = '';
+
     var errors = _.filter(files, function (file) {
       return file.phpcsReport.error;
     });
 
     if (errors.length > 0) {
-      var fails = _.map(errors, function (file) {
+      fails = _.map(errors, function (file) {
         return file.path;
       });
 
-      var message = fails.join(', ');
+      message = fails.join(', ');
 
       emitter.emit('error', new PluginError('phpcs', message));
     }
