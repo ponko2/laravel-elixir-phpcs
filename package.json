@@ -1,27 +1,11 @@
 {
   "name": "laravel-elixir-phpcs",
-  "version": "0.4.0",
   "description": "Laravel Elixir PHP_CodeSniffer Extension",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/ponko2/laravel-elixir-phpcs.git"
-  },
-  "keywords": [
-    "laravel",
-    "elixir",
-    "phpcs",
-    "gulp"
-  ],
+  "version": "0.4.0",
   "author": "Takahito Nakano",
-  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ponko2/laravel-elixir-phpcs/issues"
   },
-  "homepage": "https://github.com/ponko2/laravel-elixir-phpcs",
   "dependencies": {
     "events": "^1.1.0",
     "gulp-phpcs": "^1.0.0",
@@ -32,5 +16,21 @@
   "devDependencies": {
     "eslint": "^2.1.0",
     "eslint-config-ponko2": "^2.0.1"
+  },
+  "homepage": "https://github.com/ponko2/laravel-elixir-phpcs",
+  "keywords": [
+    "elixir",
+    "gulp",
+    "laravel",
+    "phpcs"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ponko2/laravel-elixir-phpcs.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   }
 }
