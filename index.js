@@ -6,7 +6,6 @@ var phpcs       = require('gulp-phpcs');
 var gutil       = require('gulp-util');
 var map         = require('map-stream');
 var events      = require('events');
-var _           = require('underscore');
 var colors      = gutil.colors;
 var emitter     = new events.EventEmitter();
 var PluginError = gutil.PluginError;
@@ -15,7 +14,7 @@ var config      = Elixir.config;
 
 var logReporter = function () {
   return map(function (files, cb) {
-    _.each(files, function (file) {
+    files.forEach(function (file) {
       var report  = file.phpcsReport || {};
       var message = '';
 
@@ -39,12 +38,12 @@ var failReporter = function () {
     var fails   = [];
     var message = '';
 
-    var errors = _.filter(files, function (file) {
+    var errors = files.filter(function (file) {
       return file.phpcsReport.error;
     });
 
     if (errors.length > 0) {
-      fails = _.map(errors, function (file) {
+      fails = errors.map(function (file) {
         return file.path;
       });
 
