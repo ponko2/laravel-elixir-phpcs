@@ -1,5 +1,8 @@
 # laravel-elixir-phpcs
 
+[![npm version](https://badge.fury.io/js/laravel-elixir-phpcs.svg)](https://badge.fury.io/js/laravel-elixir-phpcs)
+[![Build Status](https://travis-ci.org/ponko2/laravel-elixir-phpcs.svg?branch=master)](https://travis-ci.org/ponko2/laravel-elixir-phpcs)
+
 ## Install
 
 ```sh
@@ -15,12 +18,12 @@ var elixir = require('laravel-elixir');
 require('laravel-elixir-phpcs');
 
 elixir(function(mix) {
-    mix.phpcs([
-      'app/**/*.php',
-      'tests/**/*.php'
-    ], {
-      bin: 'vendor/bin/phpcs',
-      standard: 'PSR2'
-    });
+  mix.phpcs([
+    'app/**/*.php',
+    'tests/**/*.php'
+  ], {
+    bin: 'vendor/bin/phpcs',
+    standard: 'PSR2'
+  });
 });
 ```
