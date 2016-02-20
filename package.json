@@ -33,6 +33,6 @@
     "url": "https://github.com/ponko2/laravel-elixir-phpcs.git"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint ."
   }
 }
