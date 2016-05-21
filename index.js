@@ -8,7 +8,6 @@ var map         = require('map-stream');
 var events      = require('events');
 var emitter     = new events.EventEmitter();
 var PluginError = gutil.PluginError;
-var notify      = new Elixir.Notification();
 var config      = Elixir.config;
 
 var logReporter = function () {
@@ -53,6 +52,8 @@ var failReporter = function () {
 Elixir.extend('phpcs', function (src, options) {
   var paths = new Elixir.GulpPaths()
     .src(src || [config.appPath + '/**/*.php']);
+
+  var notify = new Elixir.Notification();
 
   var onError = function (err) {
     notify.error(err, 'PHP_CodeSniffer Failed');
