@@ -1,7 +1,7 @@
 {
   "name": "laravel-elixir-phpcs",
   "description": "Laravel Elixir PHP_CodeSniffer Extension",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "author": "Takahito Nakano",
   "bugs": {
     "url": "https://github.com/ponko2/laravel-elixir-phpcs/issues"
