@@ -1,9 +1,6 @@
-import logReporter  from '../reporters/log';
-import failReporter from '../reporters/fail';
+/* eslint-disable global-require */
 
-const gutil = require('gulp-util');
-
-let phpcs;
+let gutil, phpcs, logReporter, failReporter;
 
 export default class PHPCodeSnifferTask extends Elixir.Task {
   /**
@@ -26,8 +23,10 @@ export default class PHPCodeSnifferTask extends Elixir.Task {
    * @returns {void}
    */
   loadDependencies() {
-    // eslint-disable-next-line global-require
-    phpcs = require('gulp-phpcs');
+    gutil        = require('gulp-util');
+    phpcs        = require('gulp-phpcs');
+    logReporter  = require('../reporters/log');
+    failReporter = require('../reporters/fail');
   }
 
   /**

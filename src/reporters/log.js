@@ -1,12 +1,7 @@
 const gutil = require('gulp-util');
 const map   = require('map-stream');
 
-/**
- * Log reporter
- *
- * @returns {Stream} Object stream usable in Gulp pipes.
- */
-export default function () {
+module.exports = function () {
   return map((files, cb) => {
     files.forEach(file => {
       const report = file.phpcsReport || {};
@@ -20,4 +15,4 @@ export default function () {
 
     cb(null, files);
   });
-}
+};

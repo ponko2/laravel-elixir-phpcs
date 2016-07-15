@@ -4,12 +4,7 @@ const events      = require('events');
 const emitter     = new events.EventEmitter();
 const PluginError = gutil.PluginError;
 
-/**
- * Fail reporter
- *
- * @returns {Stream} Object stream usable in Gulp pipes.
- */
-export default function () {
+module.exports = function () {
   return map((files, cb) => {
     let fails   = [];
     let message = '';
@@ -25,4 +20,4 @@ export default function () {
 
     cb(null, files);
   });
-}
+};
