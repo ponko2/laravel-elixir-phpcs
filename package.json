@@ -10,7 +10,8 @@
     "events": "^1.1.1",
     "gulp-phpcs": "^1.1.1",
     "gulp-util": "^3.0.7",
-    "map-stream": "0.0.6"
+    "map-stream": "0.0.6",
+    "pluralize": "^3.0.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
