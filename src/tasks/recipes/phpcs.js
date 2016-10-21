@@ -7,7 +7,7 @@ import PHPCodeSnifferTask from '../PHPCodeSnifferTask';
  * @param {object|null}       options PHP CodeSniffer options
  * @returns {void}
  */
-function task(src, options) {
+function task(src, options = {}) {
   // eslint-disable-next-line no-new
   new PHPCodeSnifferTask('phpcs', getPaths(src), options);
 }

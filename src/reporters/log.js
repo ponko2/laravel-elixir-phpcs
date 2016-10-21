@@ -3,7 +3,7 @@ const map   = require('map-stream');
 
 module.exports = function () {
   return map((files, cb) => {
-    files.forEach(file => {
+    files.forEach((file) => {
       const report = file.phpcsReport || {};
 
       if (!report.error) {
