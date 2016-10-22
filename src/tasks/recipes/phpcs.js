@@ -19,8 +19,14 @@ function task(src, options = {}) {
  * @returns {GulpPaths} Gulp src paths
  */
 function getPaths(src) {
+  const config = Elixir.config;
+
   return new Elixir.GulpPaths()
-    .src(src || [`${Elixir.config.appPath}/**/*.php`]);
+    .src(src || [
+      `${config.appPath}/**/*.php`,
+      `${config.testing.phpUnit.path}${config.testing.phpUnit.search}`,
+      `${config.testing.phpSpec.path}${config.testing.phpSpec.search}`,
+    ]);
 }
 
 Elixir.extend('phpcs', task);
