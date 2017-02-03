@@ -5,17 +5,8 @@
 
 ## Install
 
-### Laravel Elixir >=3.0.0-0 <6.0.0-0
-
 ```sh
 $ npm install laravel-elixir-phpcs --save-dev
-$ composer require "squizlabs/php_codesniffer=*" --dev
-```
-
-### Laravel Elixir >=6.0.0-11
-
-```sh
-$ npm install laravel-elixir-phpcs@beta --save-dev
 $ composer require "squizlabs/php_codesniffer=*" --dev
 ```
 

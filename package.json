@@ -1,21 +1,31 @@
 {
   "name": "laravel-elixir-phpcs",
   "description": "Laravel Elixir PHP_CodeSniffer Extension",
-  "version": "0.6.1",
+  "version": "1.0.0-4",
   "author": "Takahito Nakano",
   "bugs": {
     "url": "https://github.com/ponko2/laravel-elixir-phpcs/issues"
   },
   "dependencies": {
     "events": "^1.1.1",
-    "gulp-phpcs": "^1.2.0",
-    "gulp-util": "^3.0.7",
-    "map-stream": "0.0.6"
+    "gulp-phpcs": "^1.4.0",
+    "gulp-util": "^3.0.8",
+    "map-stream": "0.0.6",
+    "pluralize": "^3.1.0"
   },
   "devDependencies": {
-    "eslint": "^3.8.1",
-    "eslint-config-ponko2": "^10.0.0"
+    "babel-cli": "^6.22.2",
+    "babel-preset-es2015": "^6.22.0",
+    "eslint": "^3.14.1",
+    "eslint-config-ponko2": "^10.0.0",
+    "laravel-elixir": "^6.0.0-15"
   },
+  "engines": {
+    "node": ">=4"
+  },
+  "files": [
+    "lib"
+  ],
   "homepage": "https://github.com/ponko2/laravel-elixir-phpcs",
   "keywords": [
     "elixir",
@@ -24,15 +34,18 @@
     "phpcs"
   ],
   "license": "MIT",
-  "main": "index.js",
+  "main": "lib/index.js",
   "peerDependencies": {
-    "laravel-elixir": ">=3.0.0-0 <6.0.0-0"
+    "laravel-elixir": ">=6.0.0-11"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/ponko2/laravel-elixir-phpcs.git"
   },
   "scripts": {
-    "lint": "eslint ."
+    "build": "babel src --out-dir lib --source-maps inline",
+    "lint": "eslint .",
+    "prepublish": "npm run --if-present build",
+    "watch": "babel src --out-dir lib --watch --source-maps inline"
   }
 }
