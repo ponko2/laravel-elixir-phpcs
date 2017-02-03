@@ -1,9 +1,9 @@
-const gutil       = require('gulp-util');
-const map         = require('map-stream');
-const events      = require('events');
-const pluralize   = require('pluralize');
-const emitter     = new events.EventEmitter();
-const PluginError = gutil.PluginError;
+const gutil         = require('gulp-util');
+const map           = require('map-stream');
+const events        = require('events');
+const pluralize     = require('pluralize');
+const emitter       = new events.EventEmitter();
+const {PluginError} = gutil;
 
 module.exports = function () {
   return map((files, cb) => {
