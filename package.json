@@ -8,7 +8,7 @@
   },
   "dependencies": {
     "events": "^1.1.1",
-    "gulp-phpcs": "^1.4.0",
+    "gulp-phpcs": "^2.0.0",
     "gulp-util": "^3.0.8",
     "map-stream": "0.0.7",
     "pluralize": "^5.0.0"
